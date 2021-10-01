@@ -36,3 +36,7 @@ Launches the test runner - jest and runs the tests within tests dir in the src f
 
 Runs eslint on entire project directory.
 
+## Testing
+
+- [Test Server](https://wallet-engine.herokuapp.com)
+
