@@ -30,6 +30,7 @@
     "http-status-codez": "^1.1.0",
     "mongoose": "^6.0.8",
     "morgan": "^1.10.0",
+    "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
   "devDependencies": {

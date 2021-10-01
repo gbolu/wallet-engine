@@ -1,11 +1,7 @@
 const { Schema, model } = require("mongoose");
+const { v4: uuid } = require("uuid");
 
-const walletSchema = new Schema({
-  _owner: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    index: true,
-  },
+const WalletSchema = new Schema({
   balance: {
     type: Number,
     default: 0,
@@ -15,20 +11,30 @@ const walletSchema = new Schema({
     enum: ["active", "inactive"],
     default: "active",
   },
+  id: { type: String },
 });
 
-walletSchema.methods.toJSON = function () {
+WalletSchema.pre("save", function (next) {
+  if (this.isNew) {
+    this.id = uuid();
+  }
+
+  next();
+});
+
+WalletSchema.methods.toJSON = function () {
   const walletObj = this.toObject();
-  delete walletObj._owner;
   delete walletObj.__v;
+  delete walletObj._id;
   return walletObj;
 };
 
-walletSchema.set("toObject", {
+WalletSchema.set("toObject", {
   transform: function (doc, ret) {
     delete ret.__v;
+    delete ret._id;
     return ret;
   },
 });
 
-module.exports = model("Wallet", walletSchema);
+module.exports = model("Wallet", WalletSchema);
