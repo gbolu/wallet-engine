@@ -19,8 +19,8 @@ db.once("open", () => {
 });
 
 // HANDLING UNCAUGHT EXCEPTION ERRORS
-process.on('uncaughtException', (err) => {
-  logger.error('UNCAUGHT EXCEPTION! 🙄 Shutting down...');
+process.on("uncaughtException", (err) => {
+  logger.error("UNCAUGHT EXCEPTION! 🙄 Shutting down...");
   logger.error(err);
   process.exit(1);
 });

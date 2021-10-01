@@ -3,7 +3,7 @@ const retrieveToken = (req) => {
   const bearer = req.headers.authorization || null;
   if (bearer) {
     token = bearer.split(" ", 2)[1];
-  } 
+  }
 
   return token;
 };

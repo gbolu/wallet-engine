@@ -1,6 +1,6 @@
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
-const { JWT_HASH } = require("../../config");
+const { JWT_HASH } = require("../../../config");
 
 const decodeJWTExpiryTimestamp = async (token) => {
   const decoded = await promisify(jwt.verify)(token, JWT_HASH);

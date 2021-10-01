@@ -1,4 +1,4 @@
-const { Response } = require("http-status-codez")
+const { Response } = require("http-status-codez");
 const express = require("express");
 const morgan = require("morgan");
 const globalErrorHandler = require("./utils/lib/errorHandlers/globalErrorHandler");
@@ -9,8 +9,8 @@ const app = express();
 /**
  * Development logging using morgan
  */
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
 }
 
 /**
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 // HANDLING UNHANDLED ROUTES
-app.all('*', (req, res, next) => {
+app.all("*", (req, res, next) => {
   next(
     new AppError(
       `Can't find ${req.originalUrl} on this Server!`,

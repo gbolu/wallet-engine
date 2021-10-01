@@ -1,7 +1,7 @@
 const yup = require("yup");
 const { Response } = require("http-status-codez");
 const catchAsync = require("../utils/lib/catchAsync");
-const errorResponse = require("../utils/responseHandlers/errorResponse");
+const errorResponse = require("../utils/lib/responseHandlers/errorResponse");
 
 const validateRequest = (schema = yup.object({})) =>
   catchAsync(async (req, res, next) => {
