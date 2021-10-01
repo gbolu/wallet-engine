@@ -4,6 +4,8 @@
   "description": "A wallet engine with API features built as part of a job application's assessments.",
   "main": "server.js",
   "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "jest ./tests --runInBand --detectOpenHandles"
   },
   "repository": {
