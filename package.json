@@ -1,0 +1,50 @@
+{
+  "name": "wallet-engine",
+  "version": "1.0.0",
+  "description": "A wallet engine with API features built as part of a job application's assessments.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest ./tests --runInBand --detectOpenHandles",
+    "lint": "eslint \"./**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbolu/wallet-engine.git"
+  },
+  "keywords": [
+    "wallet",
+    "api",
+    "assessment"
+  ],
+  "author": "Gbolu Adeyemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbolu/wallet-engine/issues"
+  },
+  "homepage": "https://github.com/gbolu/wallet-engine#readme",
+  "dependencies": {
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status-codez": "^1.1.0",
+    "mongodb-memory-server": "^7.4.2",
+    "mongoose": "^6.0.8",
+    "morgan": "^1.10.0",
+    "supertest": "^6.1.6",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-security": "^1.4.0",
+    "jest": "^27.2.4",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1"
+  }
+}
