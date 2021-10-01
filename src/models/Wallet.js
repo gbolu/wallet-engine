@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { v4: uuid } = require("uuid");
+const generateUuid = require("../utils/lib/generateUUID");
 
 const WalletSchema = new Schema({
   balance: {
@@ -16,7 +16,7 @@ const WalletSchema = new Schema({
 
 WalletSchema.pre("save", function (next) {
   if (this.isNew) {
-    this.id = uuid();
+    this.id = generateUuid();
   }
 
   next();

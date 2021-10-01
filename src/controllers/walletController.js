@@ -35,7 +35,7 @@ exports.getAllWallets = catchAsync(async (req, res, next) => {
 
   successResponse(
     wallets,
-    "Wallet retrieved successfully.",
+    "Wallets retrieved successfully.",
     Response.HTTP_OK,
     res
   );
