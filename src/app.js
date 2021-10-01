@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const globalErrorHandler = require("./utils/lib/errorHandlers/globalErrorHandler");
 const AppError = require("./utils/lib/appError");
+const walletRouter = require("./routes/walletRoutes");
 
 const app = express();
 
@@ -17,6 +18,11 @@ if (process.env.NODE_ENV === "development") {
  * Mount body parser (json) middleware
  */
 app.use(express.json());
+
+/**
+ * Mount routes unto express router
+ */
+app.use("/wallets", walletRouter);
 
 // HANDLING UNHANDLED ROUTES
 app.all("*", (req, res, next) => {
